@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Command Selector</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Select Command</h1>
+        </header>
+        <form method="post" action="{% urls 'excelapp:results' year=year %}">
+            {% csrf_token %}
+            <input type="hidden" name="year" value="{{ year }}">
+            <label for="command">Command:</label>
+            <select id="command" name="command" required>
+                <option value="best_seller">Best Seller Product</option>
+                <option value="most_expensive">The Most Expensive Product</option>
+                <option value="cheapest">Cheapest Product</option>
+                <option value="most_profitable">The Most Profitable Product</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2024 Your Company</p>
+    </footer>
+</body>
+</html>

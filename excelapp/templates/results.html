@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Results</h1>
+        </header>
+        <div class="result">
+            <h1>Results for {{ year }}</h1>
+            <p>The result for the selected command is: {{ result }}</p>
+            <a href="{% url 'excelapp:select_year' %}">Select Another Year</a>
+            <a href="{% url 'excelapp:graph' product=product year=year %}">Show Graphs</a>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Your Company</p>
+    </footer>
+</body>
+</html>
+
