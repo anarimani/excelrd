@@ -1,25 +1,19 @@
+<!-- excelapp/templates/select_year.html -->
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <title>Select Year</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Select Year</h1>
-        </header>
-        <form method="post" action="{% url 'excelapp:command_selector' %}">
-            {% csrf_token %}
-            <label for="year">Year:</label>
-            <input type="number" id="year" name="year" required>
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-    <footer>
-        <p>&copy; 2024 Your Company</p>
-    </footer>
+    <h1>Select Year</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="year">Year:</label>
+        <input type="text" id="year" name="year" required>
+        <button type="submit">Submit</button>
+    </form>
 </body>
 </html>

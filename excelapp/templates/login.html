@@ -1,5 +1,5 @@
 {% load static %}
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
@@ -12,31 +12,5 @@
         {{ form.as_p }}
         <button type="submit">Login</button>
     </form>
-</body>
-</html> -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>Login</h1>
-        </header>
-        <form method="post" action="{% url 'excelapp:login' %}">
-            {% csrf_token %}
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Login</button>
-        </form>
-    </div>
-    <footer>
-        <p>&copy; 2024 Your Company</p>
-    </footer>
 </body>
 </html>
