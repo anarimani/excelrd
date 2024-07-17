@@ -1,16 +1,16 @@
-<!-- excelapp/templates/results.html -->
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <title>Results</title>
-</head>
-<body>
-    <h1>{{ command }} in {{ year }}</h1>
-    <p>The result for the selected command is: {{ result }}</p>
-    <a href="{% url 'excelapp:select-year' %}">Select Another Year</a>
-    <a href="{% url 'excelapp:command-selector' year %}">Select Another Command</a>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}نتایج{% endblock %}
+
+{% block content %}
+    <h1>نتایج</h1>
+    <p>نتیجه برای فرمان انتخاب شده: {{ result }}</p>
+    <p>تاریخ انتخاب شده: {{ date }}</p>
+    <p>فرمان: {{ command }}</p>
+    {% if customer %}
+        <p>مشتری: {{ customer }}</p>
+    {% endif %}
+    {% if product %}
+        <p>محصول: {{ product }}</p>
+    {% endif %}
+{% endblock %}

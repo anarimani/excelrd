@@ -14,6 +14,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'excelapp',
+    'django_jalali',
 ]
 
 MIDDLEWARE = [
@@ -74,13 +75,9 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-STATIC_URL = '/static/'
-
-LOGIN_REDIRECT_URL = '/excelapp/select_year/'
+LOGIN_REDIRECT_URL = '/excelapp/select_date/'
 LOGOUT_REDIRECT_URL = '/login/'
 
 STATIC_URL = '/static/'
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'excelapp/static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

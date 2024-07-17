@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}انتخاب مشتری{% endblock %}
+
+{% block content %}
+    <form method="post" action="{% url 'excelapp:select_customer' date=date command=command %}">
+        {% csrf_token %}
+        <h1>انتخاب مشتری</h1>
+        <div class="input-group">
+            <label for="customer">مشتری:</label>
+            <input type="text" id="customer" name="customer" required>
+        </div>
+        <button type="submit">ارسال</button>
+    </form>
+{% endblock %}

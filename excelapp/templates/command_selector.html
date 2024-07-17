@@ -1,24 +1,20 @@
-<!-- excelapp/templates/command_selector.html -->
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <title>Select Command</title>
-</head>
-<body>
-    <h1>Select Command for Year {{ year }}</h1>
-    <form method="post">
+{% extends 'base.html' %}
+
+{% block title %}انتخاب فرمان{% endblock %}
+
+{% block content %}
+    <form method="post" action="{% url 'excelapp:command_selector' date=date %}">
         {% csrf_token %}
-        <label for="command">Command:</label>
-        <select id="command" name="command" required>
-            <option value="best_seller">Best Seller Product</option>
-            <option value="most_expensive">The Most Expensive Product</option>
-            <option value="cheapest">Cheapest Product</option>
-            <option value="most_profitable">The Most Profitable Product</option>
-        </select>
-        <button type="submit">Submit</button>
+        <h1>انتخاب فرمان</h1>
+        <div class="input-group">
+            <label for="command">فرمان:</label>
+            <select id="command" name="command" required>
+                <option value="best_seller">کدام مشتری بیشتر از بقیه مشتریان خرید کرده است؟</option>
+                <option value="most_expensive">کدام مشتری محصول مورد نظر را بیشتر از بقیه مشتریان خرید کرده است؟</option>
+                <option value="cheapest">کدام محصول بیشتر از بقیه محصولات در بازه زمانی انتخاب شده فروخته شده است؟</option>
+                <option value="most_profitable">مشتریان منتخب کدام محصول را بیشتر از بقیه در تاریخ انتخاب شده خرید کرده‌اند؟</option>
+            </select>
+        </div>
+        <button type="submit">ارسال</button>
     </form>
-</body>
-</html>
+{% endblock %}
