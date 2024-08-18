@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 import pandas as pd
 import requests
 import jdatetime
+from jalali_date import datetime2jalali, date2jalali
 
 @login_required
 def login(request):

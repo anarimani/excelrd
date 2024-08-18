@@ -15,6 +15,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'excelapp',
     'django_jalali',
+    'jalali_date',
 ]
 
 MIDDLEWARE = [
@@ -69,7 +70,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fa'
+import locale
+locale.setlocale(locale.LC_ALL, "fa_IR.UTF-8")
+
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
@@ -81,3 +85,21 @@ LOGOUT_REDIRECT_URL = '/login/'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'excelapp/static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+JALALI_DATE_DEFAULTS = {
+   'LIST_DISPLAY_AUTO_CONVERT': False,
+   'Strftime': {
+        'date': '%y/%m/%d',
+        'datetime': '%H:%M:%S _ %y/%m/%d',
+    },
+    'Static': {
+        'js': [
+            'admin/js/django_jalali.min.js',
+        ],
+        'css': {
+            'all': [
+                'admin/jquery.ui.datepicker.jalali/themes/base/jquery-ui.min.css',
+            ]
+        }
+    }
+}
