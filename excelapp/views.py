@@ -17,7 +17,6 @@ def select_date(request):
         gregorian_date = shamsi_date.togregorian()
         return redirect('excelapp:command_selector', date=gregorian_date.isoformat())
     return render(request, 'select_date.html')
-
 @login_required
 def command_selector(request, date):
     if request.method == 'POST':
