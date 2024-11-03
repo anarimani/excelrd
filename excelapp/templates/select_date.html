@@ -1,15 +1,17 @@
+<!-- select_date.html -->
 {% extends 'base.html' %}
-
-{% block title %}انتخاب تاریخ{% endblock %}
+{% load static %}
 
 {% block content %}
-    <form method="post" action="{% url 'excelapp:select_date' %}">
-        {% csrf_token %}
-        <h1>انتخاب تاریخ</h1>
-        <div class="input-group">
-            <label for="date">تاریخ:</label>
-            <input type="text" id="date" name="date" required>
-        </div>
-        <button type="submit">ارسال</button>
-    </form>
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Submit</button>
+    
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</form>
+
 {% endblock %}
+

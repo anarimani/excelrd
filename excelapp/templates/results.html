@@ -5,7 +5,8 @@
 {% block content %}
     <h1>نتایج</h1>
     <p>نتیجه برای فرمان انتخاب شده: {{ result }}</p>
-    <p>تاریخ انتخاب شده: {{ date }}</p>
+    <p>تاریخ انتخاب شده از: {{ start_date }}</p>
+    <p>تا: {{ end_date }}</p>
     <p>فرمان: {{ command }}</p>
     {% if customer %}
         <p>مشتری: {{ customer }}</p>

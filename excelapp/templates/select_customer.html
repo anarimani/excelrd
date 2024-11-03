@@ -3,7 +3,7 @@
 {% block title %}انتخاب مشتری{% endblock %}
 
 {% block content %}
-    <form method="post" action="{% url 'excelapp:select_customer' date=date command=command %}">
+    <form method="post" action="{% url 'excelapp:select_customer' start_date=start_date end_date=end_date command=command %}">
         {% csrf_token %}
         <h1>انتخاب مشتری</h1>
         <div class="input-group">

@@ -1,3 +1,9 @@
 from django.contrib import admin
+from .models import Event
+from .forms import EventForm
 
-# Register your models here.
+class EventAdmin(admin.ModelAdmin):
+    form = EventForm
+
+admin.site.register(Event, EventAdmin)
+

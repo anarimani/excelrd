@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="{% static 'admin/jquery.ui.datepicker.jalali/themes/base/jquery-ui.min.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@majidh1/jalalidatepicker/dist/jalalidatepicker.min.css">
+    <link rel="icon" type="image/png" href="{% static 'img/favicon-32x32.png' %}"/>
 </head>
 <body>
     <div class="container">
@@ -15,20 +17,12 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{% static 'admin/js/django_jalali.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@majidh1/jalalidatepicker/dist/jalalidatepicker.min.js"></script>
     <script>
         $(document).ready(function() {
-            $("#date").persianDatepicker({
-                format: 'YYYY/MM/DD',
-                initialValue: false,
-                autoClose: true,
-                toolbox: {
-                    calendarSwitch: {
-                        enabled: true,
-                        format: 'YYYY/MM/DD'
-                    }
-                }
-            });
+            jalaliDatepicker.startWatch();
         });
     </script>
 </body>
 </html>
+

@@ -16,6 +16,7 @@ INSTALLED_APPS = [
     'excelapp',
     'django_jalali',
     'jalali_date',
+    'jdatetime',
 ]
 
 MIDDLEWARE = [
@@ -34,6 +35,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        #'DIRS': ['D:\excel project\excelrd\excelapp\templates'],  # Add your directory here
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
